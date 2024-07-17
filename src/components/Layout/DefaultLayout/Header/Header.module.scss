@@ -1,0 +1,118 @@
+.wapper {
+    height: 50px;
+    background-color: #f7f6f4;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    right: 0;
+    left: 0;
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .wapper-header {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        justify-content: center;
+        width: 1280px;
+        align-items: center;
+        
+        .header-menu {
+            
+            .header-category {
+                display: flex;
+                font-size: 17px;
+                font-weight: 500;
+                align-items: center;
+                
+                a:nth-child(1){
+                    margin-left: 0;
+                    text-decoration: none;
+                }
+
+                a {
+                    text-decoration: none;
+                    margin-left: 40px;
+                    color: #000;
+                    cursor: pointer;
+                }
+                .logo {
+                    width: 40px;
+                }
+            }
+        }
+        .header-account {
+            font-size: 17px;
+            font-weight: 500;
+            position: relative;
+            
+            .account-user{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                
+                span{
+                    margin-left: 10px;
+                    color: #000;
+                }
+            }
+            .btn-login {
+                position: absolute;
+                top: 30px;
+                left: -70px;
+                width: max-content;
+                border-radius: 5px;
+                background-color: #fff;
+                cursor: pointer;
+                z-index: 100;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, .25);
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    width: 100%;
+                    height: 20px;
+                    background-color: transparent;
+                }
+
+                div {
+                    width: 130px;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 10px;
+                    border-radius: 30px;
+                    color: #fff;
+                    background-color: #d02028;
+                    font-size: 15px;
+                    font-weight: 600;
+                }
+                .acount-info {
+                    width: 130px;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 10px;
+                    color: #3a77e5;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+            .user-icon {
+                font-size: 25px;
+                color: #d02028;
+                div{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+        }
+    }
+}
+
