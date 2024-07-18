@@ -9,7 +9,7 @@ import {
 } from "react-icons/io5";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
 
-import { FaRegEye, FaUserCircle, FaRegStar, FaRegUser, FaRegNewspaper } from "react-icons/fa";
+import { FaRegEye, FaUserCircle, FaRegStar, FaRegUser, FaRegNewspaper, FaPlus } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { GoFilter } from "react-icons/go";
