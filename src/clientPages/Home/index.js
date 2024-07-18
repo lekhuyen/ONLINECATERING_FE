@@ -1,95 +1,94 @@
 
 import icons from "../../ultil/icons";
-import { useEffect, useState } from "react";
-
-
-
+import clsx from 'clsx';
 import styles from './Home.module.scss'
 import classNames from "classnames/bind";
+import { useState } from "react";
+import Slider from "../../components/Layout/Slider";
 const cx = classNames.bind(styles)
 
 
-const { GrPrevious, GrNext, GoFilter } = icons
+const { GoFilter } = icons
 
 const Home = () => {
-    // const [active, setActive] = useState(0)
-
-    // const list = document.querySelector(".list")
-    // const dots = document.querySelectorAll(".dots li")
-    // const prev = document.querySelector(".prev")
-    // const next = document.querySelector(".next")
-    // useEffect(() => {
-    //     const items = document.querySelectorAll(`.${cx('item')}`);
-    //     console.log(items);
-
-    // }, [])
+    const [active, setActive] = useState(1)
 
     var slideImages = [
         {
-            image: "https://imageio.forbes.com/specials-images/imageserve/5d8d70aa53e9710008d8f11b/A-Chinese-style-spread-at-Mao-Chow-in-London/960x0.jpg?height=474&width=711&fit=bounds"
+            image: "https://imageio.forbes.com/specials-images/imageserve/5d8d70aa53e9710008d8f11b/A-Chinese-style-spread-at-Mao-Chow-in-London/960x0.jpg?height=474&width=711&fit=bounds",
+            restauranName: "Nhà hàng ăn k cho uống",
+            address: "123 truong chinh, p12,Q.Tan Binh",
+            discount: "Discount 10%"
         },
         {
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlfkdZ8OFyxRjN9e7sySgJSpnJsxnQD-EKx7fr8Hml_cz1eoYWTNQZrbDcqE-u_ifhla8&usqp=CAU"
+            image: "https://res.cloudinary.com/sagacity/image/upload/c_crop,h_683,w_1024,x_0,y_0/c_limit,w_1080/v1446481966/oporto_interior_twmjsf.jpg",
+            restauranName: "Nhà hàng ăn k cho uống",
+            address: "123 truong chinh, p12,Q.Tan Binh",
+            discount: "Discount 10%"
         },
         {
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ShestHMQF7kmOT1wyfKBI-O3OMxxLHpKHO_x90QepZ-Tkmt-Wmt1kfipyUR_aG1aiIc&usqp=CAU"
+            image: "https://cdn.shopify.com/s/files/1/0634/2810/0335/files/Article_2021_20Pic_203-1.png",
+            restauranName: "Nhà hàng toan bánh mì",
+            address: "124 truong chinh, p12,Q.Tan Binh",
+            discount: "Discount 20%"
         },
         {
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ShestHMQF7kmOT1wyfKBI-O3OMxxLHpKHO_x90QepZ-Tkmt-Wmt1kfipyUR_aG1aiIc&usqp=CAU"
+            image: "https://axwwgrkdco.cloudimg.io/v7/lefooding.com/medias/2024/04/Aperol-x-Fooding-%C2%A9-Maurine-Toussaint.jpg?width=800&optipress=3",
+            restauranName: "Nhà hàng Buffet toàn rau",
+            address: "125 truong chinh, p12,Q.Tan Binh",
+            discount: "Discount 30%"
+        },
+        {
+            image: "https://transform-cf1.nws.ai/https%3A//cdn.thenewsroom.io/platform/story_media/1288820281/rm3-580.webp/w_1200,c_limit/",
+            restauranName: "Nhà hàng toàn hết đồ ăn",
+            address: "124 truong chinh, p12,Q.Tan Binh",
+            discount: "Discount 40%"
         }
     ]
 
+    let lengthItems = slideImages.length - 1;
+    // console.log(active);
+    const handleOnClickNext = () => {
+        if (active + 1 > lengthItems) {
+            setActive(0)
+        } else {
+            setActive(prev => (prev + 1))
+        }
 
-    // const handleOnClickNext = () => {
-    //     setActive(prev => (prev + 1))
-    //     reloadSlider()
+    }
+    const handleOnClickPrev = () => {
+        if (active - 1 < 0) {
+            setActive(lengthItems)
+        } else {
+            setActive(prev => (prev - 1))
+        }
+    }
+    const handleOnclickDot = (index) => {
+        setActive(index)
+    }
+    // useEffect(() => {
+    //     timeId.current = setInterval(() =>{
+    //         handleOnClickNext()
+    //     }, 500)
+    //     return () => clearInterval(timeId)
 
-    // }
-    // const reloadSlider = () => {
-    //     let checkLeft = slideImages[active]
-    //     console.log(checkLeft);
-    //     // list.style.left = -checkLeft + 'px'
-    // }
+    // },[])
 
     return (
-        <div className={cx("home")}>
+        <div className={clsx(styles.home)}>
             <div className={cx("wapper")}>
-                <div className={cx("slider")}>
-                    <div className={cx("list")}>
-                        {
-                            slideImages.map((item, index) => (
-                                <div className={cx("item")} key={index}>
-                                    <img alt="" src={item.image} />
-                                    <div className={cx("content")}>
-                                        <p className={cx("restaurant-name")}>Restaurant Name</p>
-                                        <p className={cx("restaurant-address")}>123 truong chinh, p12,Q.Tan Binh</p>
-                                        <div className={cx("discount")}>
-                                            <p>Discount 10%</p>
-                                        </div>
-                                        <div className={cx("btn-order")}>
-                                            <p className={cx("order")}>Order now</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                    </div>
-                    <div className={cx("btn")}>
-                        <button className={cx("prev")}>
-                            <GrPrevious />
-                        </button>
-                        <button
-                            // onClick={handleOnClickNext}
-                            className={cx("next")}>
-                            <GrNext />
-                        </button>
-                    </div>
-                    <ul className={cx("dots")}>
-                        <li className={cx("active")}></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+
+                {/* slider */}
+                <Slider
+                    dotStatus
+                    discountStatus
+                    handleOnclickDot={handleOnclickDot}
+                    handleOnClickPrev={handleOnClickPrev}
+                    slideImages={slideImages}
+                    active={active}
+                    handleOnClickNext={handleOnClickNext}
+                />
+
                 <div className={cx("container-filter")}>
                     <div className={cx("filter")}>
                         <select className={cx("form-select")}>
