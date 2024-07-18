@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {  useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 
 import axios from 'axios';
-import { deleteAboutItem, fetchAboutData } from '../../redux/Information/aboutReducer';
+import { deleteAboutItem, fetchAboutData } from '../../redux/Information/aboutSlice';
 
 function AboutUs() {
     const dispatch = useDispatch();
@@ -40,12 +40,12 @@ function AboutUs() {
 
     return (
         <div className='container'>
-            <h2>About Data</h2>
+            <h2>About Us Content</h2>
             <button className="btn btn-success mb-3" onClick={() => navigate('/Create-About-Us')}>Create About Us</button>
             <table className="table table-dark">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Content</th>
                         <th>Image</th>
@@ -60,10 +60,10 @@ function AboutUs() {
                             <td>{about.content}</td>
                             <td>
                                 {about.imagePaths && about.imagePaths.map((image, index) => (
-                                    <img 
-                                        key={index} 
-                                        src={`http://localhost:5034${image}`} 
-                                        alt={`About ${index}`} 
+                                    <img
+                                        key={index}
+                                        src={`http://localhost:5034${image}`}
+                                        alt={`About ${index}`}
                                         style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                                     />
                                 ))}
