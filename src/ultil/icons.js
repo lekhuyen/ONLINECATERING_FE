@@ -1,24 +1,28 @@
-import { PiUsers, PiSignOutLight  } from "react-icons/pi";
-import { IoHomeOutline, 
-        IoChatboxOutline,
-        IoHelpOutline,IoMenu,
-        IoCartOutline,
+import { PiUsers, PiSignOutLight } from "react-icons/pi";
+import {
+    IoHomeOutline,
+    IoChatboxOutline,
+    IoHelpOutline,
+    IoMenu,
+    IoCartOutline,
+    IoInformationCircleOutline,
 } from "react-icons/io5";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
-import { FaRegEye, FaUserCircle,FaRegStar, FaRegUser, FaPlus   } from "react-icons/fa";
+
+import { FaRegEye, FaUserCircle, FaRegStar, FaRegUser, FaRegNewspaper } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { GrPrevious,GrNext } from "react-icons/gr";
+import { GrPrevious, GrNext } from "react-icons/gr";
 import { GoFilter } from "react-icons/go";
 import { LuMapPin } from "react-icons/lu";
 import { FiFlag } from "react-icons/fi";
 import { MdOutlineChildCare, MdAccessTime } from "react-icons/md";
-
-
-
-
+import { TbMessage2Up } from "react-icons/tb";
+import { RiContactsBook3Line } from "react-icons/ri";
+import { DiHackernews } from "react-icons/di";
 
 
 const icons = {
+
     PiUsers,
     IoHomeOutline,
     IoChatboxOutline,
@@ -32,7 +36,8 @@ const icons = {
 
     // home
     FaUserCircle,
-    GrPrevious,GrNext,
+    GrPrevious,
+    GrNext,
 
     //
     GoFilter,
@@ -48,6 +53,23 @@ const icons = {
     FaPlus ,
 
     // sdsdsad
-}
 
-export default icons
+    FaRegStar, FaRegUser,
+    MdOutlineChildCare, MdAccessTime,
+
+    //aboutus
+    IoInformationCircleOutline,
+
+    //contact
+    RiContactsBook3Line,
+    //response message
+    TbMessage2Up,
+
+    //news
+    FaRegNewspaper,
+    //news type
+    DiHackernews,
+
+};
+
+export default icons;
