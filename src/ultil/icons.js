@@ -1,44 +1,49 @@
-import { PiUsers, PiSignOutLight  } from "react-icons/pi";
-import { IoHomeOutline, 
-        IoChatboxOutline,
-        IoHelpOutline,IoMenu,
-        IoCartOutline,
+import { PiUsers, PiSignOutLight } from "react-icons/pi";
+import {
+  IoHomeOutline,
+  IoChatboxOutline,
+  IoHelpOutline,
+  IoMenu,
+  IoCartOutline,
+  IoInformationCircleOutline,
 } from "react-icons/io5";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
-import { FaRegEye, FaUserCircle } from "react-icons/fa";
+import { FaRegEye, FaUserCircle,FaRegStar, FaRegUser  } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { GrPrevious,GrNext } from "react-icons/gr";
+import { GrPrevious, GrNext } from "react-icons/gr";
 import { GoFilter } from "react-icons/go";
 import { LuMapPin } from "react-icons/lu";
 import { FiFlag } from "react-icons/fi";
-
-
-
-
+import { MdOutlineChildCare, MdAccessTime } from "react-icons/md";
 
 const icons = {
-    PiUsers,
-    IoHomeOutline,
-    IoChatboxOutline,
-    IoHelpOutline,
-    PiSignOutLight,
-    IoMenu,
-    IoIosSearch,
-    FaRegEye,
-    IoCartOutline,
-    BsCurrencyDollar,
 
-    // home
-    FaUserCircle,
-    GrPrevious,GrNext,
+  PiUsers,
+  IoHomeOutline,
+  IoChatboxOutline,
+  IoHelpOutline,
+  PiSignOutLight,
+  IoMenu,
+  IoIosSearch,
+  FaRegEye,
+  IoCartOutline,
+  BsCurrencyDollar,
 
-    //
-    GoFilter,
+  // home
+  FaUserCircle,
+  GrPrevious,
+  GrNext,
 
-    //account
-    LuMapPin,
-    FiFlag,
-    IoMdTime
-}
+  //
+  GoFilter,
 
-export default icons
+  //account
+  LuMapPin,
+  FiFlag,
+  IoMdTime,
+
+  //information
+  IoInformationCircleOutline
+};
+
+export default icons;

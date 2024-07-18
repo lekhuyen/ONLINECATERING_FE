@@ -24,7 +24,7 @@
 
 .image img {
     width: 100%;
-    height: 93%;
+    height: 100%;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -77,75 +77,64 @@
     border-radius:5px;
 }
 
+.vote div {
+    margin-left: 6px;
+    color: yellowgreen;
+    font-size: 25px;
+}
 
 
-//slider
-
-.slider {
-    width: 100%;
-    height: 550px;
-    position: relative;
-    overflow: hidden;
+//order form
+.order-form {
     background-color: #fff;
-    // box-shadow: 0 1px 6px #fff;
-}
-.list {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    display: flex;
-    // padding: 7px;
-}
-
-.item img {
-    width:  1275px;
-    height: 100%;
-    max-width: 100vw;
-    object-fit: cover;
-    padding-right: 10px;
-}
-.btn {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
-.btn button {
-    width: 50px;
-    height: 50px;
-    background-color: #fff5;
-    color: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px 20px 0;
     font-family: monospace;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
+    color: #555;
+
+    h2 {
+        text-align: center;
+        color: #d02028;
+        font-size: 25px;
+    }
 }
-.dots {
-    position: absolute;
-    bottom: 10px;
-    color: #fff;
-    left: 0;
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+.older p, .time-order p{
+    font-size: 18px;
+    height: 20px;
+}
+.older p span, .time-order span, .time p span {
+    margin-left: 5px;
+}
+.form-select ,.time input{
     width: 100%;
-    margin: 0;
-    padding: 0;
+    height: 25px;
+    margin-top: 10px;
+}
+.time div {
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
-.dots li {
-    list-style: none;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 20px;
-}
-.dots li.active {
-    width: 30px;
-}
+.time p{
+    font-size: 18px;
+    height: 20px;
+}    
 
-
+.order-now {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #d02028;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-family: monospace;
+}   
