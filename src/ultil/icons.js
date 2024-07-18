@@ -1,11 +1,11 @@
 import { PiUsers, PiSignOutLight } from "react-icons/pi";
 import {
-  IoHomeOutline,
-  IoChatboxOutline,
-  IoHelpOutline,
-  IoMenu,
-  IoCartOutline,
-  IoInformationCircleOutline,
+    IoHomeOutline,
+    IoChatboxOutline,
+    IoHelpOutline,
+    IoMenu,
+    IoCartOutline,
+    IoInformationCircleOutline,
 } from "react-icons/io5";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
 import { FaRegEye, FaUserCircle, FaRegStar, FaRegUser, FaRegNewspaper } from "react-icons/fa";
@@ -21,42 +21,44 @@ import { DiHackernews } from "react-icons/di";
 
 const icons = {
 
-  PiUsers,
-  IoHomeOutline,
-  IoChatboxOutline,
-  IoHelpOutline,
-  PiSignOutLight,
-  IoMenu,
-  IoIosSearch,
-  FaRegEye,
-  IoCartOutline,
-  BsCurrencyDollar,
+    PiUsers,
+    IoHomeOutline,
+    IoChatboxOutline,
+    IoHelpOutline,
+    PiSignOutLight,
+    IoMenu,
+    IoIosSearch,
+    FaRegEye,
+    IoCartOutline,
+    BsCurrencyDollar,
 
-  // home
-  FaUserCircle,
-  GrPrevious,
-  GrNext,
+    // home
+    FaUserCircle,
+    GrPrevious,
+    GrNext,
 
-  //
-  GoFilter,
+    //
+    GoFilter,
 
-  //account
-  LuMapPin,
-  FiFlag,
-  IoMdTime,
+    //account
+    LuMapPin,
+    FiFlag,
+    IoMdTime,
+    FaRegStar, FaRegUser,
+    MdOutlineChildCare, MdAccessTime,
 
-  //aboutus
-  IoInformationCircleOutline,
+    //aboutus
+    IoInformationCircleOutline,
 
-  //contact
-  RiContactsBook3Line,
-  //response message
-  TbMessage2Up,
+    //contact
+    RiContactsBook3Line,
+    //response message
+    TbMessage2Up,
 
-  //news
-  FaRegNewspaper,
-  //news type
-  DiHackernews,
+    //news
+    FaRegNewspaper,
+    //news type
+    DiHackernews,
 
 };
 
