@@ -10,3 +10,17 @@ export const menuItems = [
     { icon: <PiSignOutLight />, title: 'Sign Out' },
 ];
 
+export const menuTab = [
+    {
+        id: 1,
+        title: "Menu"
+    },
+    {
+        id: 2,
+        title: "Description"
+    },
+    {
+        id: 3,
+        title: "Comment"
+    },
+]
