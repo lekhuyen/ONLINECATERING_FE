@@ -7,6 +7,7 @@ import ProductManager from "../adminPages/ProductManager"
 import Contact from "../clientPages/ContactUs"
 import News from "../clientPages/News"
 import Account from "../clientPages/Account"
+import AboutUs from "../adminPages/Information/AboutUs"
 
 
 const publicRoutes = [
@@ -20,6 +21,7 @@ const publicRoutes = [
 
 const privateRoutes = [
     {path: "/dashboard", component: DashBoard},
+    {path: "/information", component: AboutUs},
     {path: "/user-manager", component: UserManager},
     {path: "/product-manager", component: ProductManager},
 ]
