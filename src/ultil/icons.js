@@ -5,12 +5,13 @@ import { IoHomeOutline,
         IoCartOutline,
 } from "react-icons/io5";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
-import { FaRegEye, FaUserCircle } from "react-icons/fa";
+import { FaRegEye, FaUserCircle,FaRegStar, FaRegUser  } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GrPrevious,GrNext } from "react-icons/gr";
 import { GoFilter } from "react-icons/go";
 import { LuMapPin } from "react-icons/lu";
 import { FiFlag } from "react-icons/fi";
+import { MdOutlineChildCare, MdAccessTime } from "react-icons/md";
 
 
 
@@ -38,7 +39,11 @@ const icons = {
     //account
     LuMapPin,
     FiFlag,
-    IoMdTime
+    IoMdTime,
+    FaRegStar ,
+    FaRegUser ,
+    MdOutlineChildCare,
+    MdAccessTime,
 }
 
 export default icons
