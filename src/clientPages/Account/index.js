@@ -5,7 +5,7 @@ import { useState } from "react";
 import Slider from "../../components/Layout/Slider";
 
 const cx = classNames.bind(styles)
-const {LuMapPin, FiFlag, IoMdTime } = icons
+const { LuMapPin, FiFlag, IoMdTime, FaRegStar, FaRegUser,MdOutlineChildCare, MdAccessTime  } = icons
 
 var imagesRestaurant = [
     {
@@ -44,15 +44,18 @@ const Account = () => {
     const hanldeChangeImage = (index) => {
         setImageSrc(imagesRestaurant[index].image)
         setImageIndex(index)
+        setActive(index)
     }
     let lengthItems = imagesRestaurant.length - 1;
-    // console.log(active);
+
     const handleOnClickNext = () => {
         if (active + 1 > lengthItems) {
             setActive(0)
         } else {
             setActive(prev => (prev + 1))
         }
+        setClickImageStatus(false)
+        // console.log(active);
 
     }
     const handleOnClickPrev = () => {
@@ -61,6 +64,7 @@ const Account = () => {
         } else {
             setActive(prev => (prev - 1))
         }
+        setClickImageStatus(false)
     }
     const handleOnclickDot = (index) => {
         setActive(index)
@@ -80,30 +84,6 @@ const Account = () => {
                             imageSrc={imageSrc}
                             clickImageStatus={clickImageStatus}
                         />
-                        {/* <div className={cx("list")}>
-                            {
-                                imagesRestaurant.map((item, index) => (
-                                    <div className={cx("item")} key={index}>
-                                        <img alt="" src={clickImageStatus ? imageSrc : item.image} />
-                                    </div>
-                                ))
-                            }
-                        </div>
-                        <div className={cx("btn")}>
-                            <button className={cx("prev")}>
-                                <GrPrevious />
-                            </button>
-                            <button
-                                // onClick={handleOnClickNext}
-                                className={cx("next")}>
-                                <GrNext />
-                            </button>
-                        </div>
-                        <ul className={cx("dots")}>
-                            <li className={cx("active")}></li>
-                            <li></li>
-                            <li></li>
-                        </ul> */}
                     </div>
                     <div className={cx("images-list")}>
                         {
@@ -148,12 +128,56 @@ const Account = () => {
                                 <span><IoMdTime /></span>
                                 Gio hoat dong: 10:00 - 20:00
                             </div>
+                            <div className={cx("vote")}>
+                                Danh gia:
+                                <div>
+                                    <span><FaRegStar /></span>
+                                    <span><FaRegStar /></span>
+                                    <span><FaRegStar /></span>
+                                    <span><FaRegStar /></span>
+                                    <span><FaRegStar /></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        pppppppppppppppppppppppppppp
+                    <div className={cx("order-form")}>
+                        <h2>Dat cho giu ban</h2>
+                        <div className={cx("form")}>
+                            <div className={cx("older")}>
+                                <p><FaRegUser /><span>Nguoi lon</span></p>
+                                <select className={cx("form-select")}>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                            <div className={cx("time-order")}>
+                                <p><MdOutlineChildCare /><span>Tre em</span></p>
+                                <select className={cx("form-select")}>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className={cx("form")}>
+                            <div className={cx("time")}>
+                                <div>
+                                    <p><MdAccessTime />
+                                        <span>Thoi gian den</span>
+                                    </p>
+                                </div>
+                                <input type="date" />
+                            </div>
+                            <div className={cx("time")}>
+                                <p></p>
+                                <input type="time" />
+                            </div>
+                        </div>
+                        <button className={cx("order-now")}>Dat cho ngay</button>
                     </div>
-
                 </div>
             </div>
         </div>
