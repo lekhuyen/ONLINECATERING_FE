@@ -16,7 +16,7 @@ const publicRoutes = [
     {path: "/", component: Home},
     {path: "/about", component: About},
     {path: "/login", component: Login, layout: null},
-    {path: "/contact", component: Contact},
+    {path: "/contact-us", component: Contact},
     {path: "/news", component: News},
     {path: "/account", component: Account},
 ]
