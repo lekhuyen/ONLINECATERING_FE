@@ -265,7 +265,7 @@ const Account = () => {
                                     <div className={cx("comment-header")}><h2>Comments</h2></div>
                                     <div style={{ marginBottom: "30px" }}>
                                         {/* comment------------- */}
-                                        
+
                                         <div className={cx("comment-content")}>
                                             <div className={cx("comment-avatar-user")}>
                                                 <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
@@ -344,7 +344,7 @@ const Account = () => {
                                                 <p>Reply</p>
                                             </div>
                                         </div>
-                                        
+
                                         {/* ------------------- */}
                                     </div>
                                     <div className={cx("comment-content-input")}>
@@ -381,14 +381,12 @@ const Account = () => {
                         <div className={cx("form")}>
                             <div className={cx("time")}>
                                 <div>
-                                    <p><MdAccessTime />
-                                        <span>Thoi gian den</span>
-                                    </p>
+                                    <p><MdAccessTime /><span>Thoi gian den</span></p>
                                 </div>
                                 <input type="date" />
                             </div>
                             <div className={cx("time")}>
-                                <p></p>
+                                <p><MdAccessTime /><span>Gio den</span></p>
                                 <input type="time" />
                             </div>
                         </div>
