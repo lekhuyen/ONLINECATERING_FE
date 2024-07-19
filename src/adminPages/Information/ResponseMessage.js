@@ -1,12 +1,9 @@
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import { deleteContact, fetchContacts, respondToContact } from '../../redux/Information/contactSlice';
 
-
 export default function ResponseMessage() {
-
     const { id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -27,10 +24,14 @@ export default function ResponseMessage() {
 
     const handleResponseSubmit = async (e) => {
         e.preventDefault();
-        await dispatch(respondToContact({id,responseMessage} ));
-        // Re-fetch the contact to get the updated status
-        await dispatch(fetchContacts());
-        navigate("/contactus");
+        try {
+            await dispatch(respondToContact({ id, responseMessage }));
+            // Re-fetch the contact to get the updated status
+            await dispatch(fetchContacts());
+            navigate("/contactus");
+        } catch (error) {
+            console.error("Error responding to contact:", error);
+        }
     };
 
     const handleDelete = async () => {
