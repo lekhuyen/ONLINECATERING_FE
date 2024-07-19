@@ -3,9 +3,14 @@ import styles from './Account.module.scss'
 import icons from "../../ultil/icons";
 import { useState } from "react";
 import Slider from "../../components/Layout/Slider";
+import { menuTab } from "../../ultil/menu";
 
 const cx = classNames.bind(styles)
-const { LuMapPin, FiFlag, IoMdTime, FaRegStar, FaRegUser,MdOutlineChildCare, MdAccessTime  } = icons
+const { LuMapPin, FiFlag,
+    IoMdTime, FaRegStar,
+    FaRegUser, MdOutlineChildCare, MdAccessTime,
+    FaPlus
+} = icons
 
 var imagesRestaurant = [
     {
@@ -35,7 +40,8 @@ var imagesRestaurant = [
 ]
 
 const Account = () => {
-    const [active, setActive] = useState(1)
+    const [active, setActive] = useState(0)
+    const [activeTabMenu, setActiveTabMenu] = useState(1)
     const [imageSrc, setImageSrc] = useState('')
     const [imageIndex, setImageIndex] = useState(0)
     const [clickImageStatus, setClickImageStatus] = useState(false)
@@ -51,18 +57,22 @@ const Account = () => {
     const handleOnClickNext = () => {
         if (active + 1 > lengthItems) {
             setActive(0)
+            setImageIndex(0)
         } else {
             setActive(prev => (prev + 1))
+            setImageIndex(active + 1)
         }
         setClickImageStatus(false)
-        // console.log(active);
-
     }
+    // console.log(active);
+
     const handleOnClickPrev = () => {
         if (active - 1 < 0) {
             setActive(lengthItems)
+            setImageIndex(lengthItems)
         } else {
             setActive(prev => (prev - 1))
+            setImageIndex(active - 1)
         }
         setClickImageStatus(false)
     }
@@ -101,7 +111,7 @@ const Account = () => {
                         }
                         {
                             mainImagesCount > 0 &&
-                            <div className={cx("image", "see-all-image")}>
+                            <div className={cx("image", "see-all-image", imageIndex >= 5 ? "active" : "")}>
                                 <img alt="" src={imagesRestaurant[6].image} />
                                 <div className={cx("all-images")}>
                                     <p>+{mainImagesCount}</p>
@@ -138,6 +148,212 @@ const Account = () => {
                                     <span><FaRegStar /></span>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className={cx("menu-tab")}>
+                            {
+                                menuTab.map((item, index) => (
+                                    <div
+                                        onClick={() => setActiveTabMenu(item.id)}
+                                        key={index}
+                                        className={cx(activeTabMenu === item.id ? "active-tab" : "")}>
+                                        <span>{item.title}</span>
+                                    </div>
+                                ))
+                            }
+                        </div>
+
+                        <div className={cx("container-description")}>
+                            {
+                                activeTabMenu === 1 &&
+                                <>
+                                    <div className={cx("item-restaurant")}>
+                                        <div className={cx("item-restaurant-info")}>
+                                            <div className={cx("item-restaurant-img")}>
+                                                <img alt="" src="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2019/11/12180349/paris-france-le-bar-des-pres-1-560x373.jpg" />
+                                            </div>
+                                            <div className={cx("item-restaurant-name")}>
+                                                <span>Tra chanh xanh la xa lanh</span>
+                                                <p>Tra, duong</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("item-restaurant-more")}>
+                                            <p>100K</p>
+                                            <div><button><FaPlus /></button></div>
+                                        </div>
+                                    </div>
+                                    <div className={cx("item-restaurant")}>
+                                        <div className={cx("item-restaurant-info")}>
+                                            <div className={cx("item-restaurant-img")}>
+                                                <img alt="" src="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2019/11/12180349/paris-france-le-bar-des-pres-1-560x373.jpg" />
+                                            </div>
+                                            <div className={cx("item-restaurant-name")}>
+                                                <span>Tra chanh xanh la xa lanh</span>
+                                                <p>Tra, duong</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("item-restaurant-more")}>
+                                            <p>100K</p>
+                                            <div><button><FaPlus /></button></div>
+                                        </div>
+                                    </div>
+                                    <div className={cx("item-restaurant")}>
+                                        <div className={cx("item-restaurant-info")}>
+                                            <div className={cx("item-restaurant-img")}>
+                                                <img alt="" src="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2019/11/12180349/paris-france-le-bar-des-pres-1-560x373.jpg" />
+                                            </div>
+                                            <div className={cx("item-restaurant-name")}>
+                                                <span>Tra chanh xanh la xa lanh</span>
+                                                <p>Tra, duong</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("item-restaurant-more")}>
+                                            <p>100K</p>
+                                            <div><button><FaPlus /></button></div>
+                                        </div>
+                                    </div>
+                                    <div className={cx("item-restaurant")}>
+                                        <div className={cx("item-restaurant-info")}>
+                                            <div className={cx("item-restaurant-img")}>
+                                                <img alt="" src="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2019/11/12180349/paris-france-le-bar-des-pres-1-560x373.jpg" />
+                                            </div>
+                                            <div className={cx("item-restaurant-name")}>
+                                                <span>Tra chanh xanh la xa lanh</span>
+                                                <p>Tra, duong</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("item-restaurant-more")}>
+                                            <p>100K</p>
+                                            <div><button><FaPlus /></button></div>
+                                        </div>
+                                    </div>
+                                    <div className={cx("item-restaurant")}>
+                                        <div className={cx("item-restaurant-info")}>
+                                            <div className={cx("item-restaurant-img")}>
+                                                <img alt="" src="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2019/11/12180349/paris-france-le-bar-des-pres-1-560x373.jpg" />
+                                            </div>
+                                            <div className={cx("item-restaurant-name")}>
+                                                <span>Tra chanh xanh la xa lanh</span>
+                                                <p>Tra, duong</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("item-restaurant-more")}>
+                                            <p>100K</p>
+                                            <div><button><FaPlus /></button></div>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                            {
+                                activeTabMenu === 2 &&
+                                <div className={cx("content-sumary")}>
+                                    <h2>Tóm tắt Wrap & Roll - MPlaza</h2>
+                                    <p>PHÙ HỢP:</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                    <p>Gặp mặt, tụ họp, liên hoan, đặt tiệc, tiếp khách, tiệc gia đình</p>
+                                </div>
+                            }
+                            {
+                                activeTabMenu === 3 &&
+                                <div className={cx("comment-container")}>
+                                    <div className={cx("comment-header")}><h2>Comments</h2></div>
+                                    <div style={{ marginBottom: "30px" }}>
+                                        {/* comment------------- */}
+                                        
+                                        <div className={cx("comment-content")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                            <div className={cx("reply-comment")}>
+                                                <p>Reply</p>
+                                            </div>
+                                        </div>
+                                        {/* reply */}
+                                        <div className={cx("comment-reply")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("comment-content")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                            <div className={cx("reply-comment")}>
+                                                <p>Reply</p>
+                                            </div>
+                                        </div>
+                                        {/* reply */}
+                                        <div className={cx("comment-reply")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("comment-content")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                            <div className={cx("reply-comment")}>
+                                                <p>Reply</p>
+                                            </div>
+                                        </div>
+                                        {/* reply */}
+                                        <div className={cx("comment-reply")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                        </div>
+                                        <div className={cx("comment-content")}>
+                                            <div className={cx("comment-avatar-user")}>
+                                                <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
+                                            </div>
+                                            <div className={cx("comment-content-user")}>
+                                                <span>David Beb</span>
+                                                <p>123 abc xyz</p>
+                                            </div>
+                                            <div className={cx("reply-comment")}>
+                                                <p>Reply</p>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* ------------------- */}
+                                    </div>
+                                    <div className={cx("comment-content-input")}>
+                                        <div className={cx("comment-input")}>
+                                            <textarea placeholder="Comment.." />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
                     </div>
                     <div className={cx("order-form")}>
