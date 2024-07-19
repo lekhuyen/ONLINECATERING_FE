@@ -190,6 +190,7 @@
     padding: 10px 20px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #f5f5f5;    
 }
 .item-restaurant-info {
@@ -220,6 +221,7 @@
 .item-restaurant-more {
     display: flex;
     align-items: center;
+    transform: translateY(-50%);
 }
 .item-restaurant-more p {
     color: #0288d1;
@@ -308,6 +310,7 @@
     overflow-wrap: break-word;
     padding-right: 10px;
     font-family: monospace;
+    margin-bottom: 0;
 }
 .reply-comment {
     position: absolute;
@@ -320,6 +323,7 @@
     font-weight: bold;
     color: #898a8d;
     cursor: pointer;
+    margin-bottom: 0;
 }
 .reply-comment p:hover {
     text-decoration: underline;
