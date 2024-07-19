@@ -27,14 +27,18 @@ import axios from "axios";
 
         export const respondToContact = createAsyncThunk(
             "contacts/respondToContact",
-            async ({id,responseMessage} ) => {
-
+            async ({ id, responseMessage }) => {
                 try {
                     const result = await axios.post(
                         `http://localhost:5034/api/contact/respond/${id}`,
-                        {responseMessage}
+                        responseMessage,
+                        {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }
                     );
-                    return result.data.data;
+                    return { id, data: result.data.data }; // Return id and response data
                 } catch (error) {
                     console.error("Error responding to contact:", error);
                     throw error.response?.data || { message: "Unknown error occurred" };
