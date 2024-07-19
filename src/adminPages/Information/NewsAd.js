@@ -59,6 +59,15 @@ function NewsAd() {
     return null; // or handle the case where newsData is not an array
   }
 
+  // Function to limit content to at least 9 words with ellipses
+  const limitContent = (content) => {
+    const words = content.split(' ');
+    if (words.length > 10) {
+      return words.slice(0, 10).join(' ') + '...';
+    }
+    return content;
+  };
+
   return (
     <div className='container'>
       <h2>News Data</h2>
@@ -70,7 +79,7 @@ function NewsAd() {
             <th>Id</th>
             <th>Title</th>
             <th>Content</th>
-            <th>NewsTypeId</th>
+            <th>NewsTypeName</th>
             <th>Image</th>
             <th>Actions</th>
           </tr>
@@ -80,17 +89,17 @@ function NewsAd() {
             <tr key={news.id}>
               <td>{news.id}</td>
               <td>{news.title}</td>
-              <td>{news.content}</td>
-              <td>{news.newsTypeId}</td>
+              <td>{limitContent(news.content)}</td>
+              <td>{news.newsTypeName}</td>
               <td>
-                {news.imagePaths && news.imagePaths.map((image, index) => (
+                {news.imagePaths && news.imagePaths.length > 0 && (
                   <img
-                    key={index}
-                    src={`http://localhost:5034${image}`}
-                    alt={`News ${index}`}
+                    src={`http://localhost:5034${news.imagePaths[0]}`}
+                    alt={`News ${news.id}`}
                     style={{ width: '100px', height: '100px', objectFit: 'cover' }}
                   />
-                ))}
+                )}
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
               </td>
               <td>
                 <button
