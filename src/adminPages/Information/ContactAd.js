@@ -23,7 +23,7 @@ const ContactAd = () => {
   }, [contactStatus, dispatch]);
 
   const handleRespondClick = (id) => {
-    navigate(`/response/${id}`);
+    navigate(`/contactus/responsemessage/${id}`);
   };
 
   const handleDeleteClick = (id) => {
