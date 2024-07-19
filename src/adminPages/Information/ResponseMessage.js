@@ -39,6 +39,10 @@ export default function ResponseMessage() {
         navigate("/contactus");
     };
 
+    const handleGoBack = () => {
+        navigate("/contactus");
+    };
+
     if (contactStatus === "loading") {
         return <div>Loading...</div>;
     }
@@ -50,6 +54,9 @@ export default function ResponseMessage() {
     if (!currentContact) {
         return <div>Contact not found</div>;
     }
+
+    // Determine if the admin has responded
+    const isAdminResponded = currentContact.isAdminResponse;
 
     return (
         <div className="container">
@@ -67,10 +74,21 @@ export default function ResponseMessage() {
                             onChange={(e) => setResponseMessage(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <br/>
+                    {/* Submit and Delete buttons inline */}
+                    <div className="btn-group">
+                        <button type="submit" className="btn btn-primary" disabled={isAdminResponded}>
+                            Submit
+                        </button>
+                        <button className="btn btn-danger" onClick={handleDelete}>
+                            Delete
+                        </button>
+                    </div>
                 </form>
             </div>
-            <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
+            <div className="mt-3">
+                <button className="btn btn-secondary" onClick={handleGoBack}>Go Back</button>
+            </div>
             <div>
                 <span>Status: </span>
                 <span style={{ color: currentContact.isAdminResponse ? 'green' : 'red' }}>

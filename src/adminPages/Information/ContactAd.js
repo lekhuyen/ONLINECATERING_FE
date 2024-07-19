@@ -14,7 +14,7 @@ const ContactAd = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const contactsPerPage = 10;
+  const contactsPerPage = 5;
 
   useEffect(() => {
     if (contactStatus === "idle") {
@@ -125,7 +125,7 @@ const ContactAd = () => {
       {contactStatus === "failed" && <div>{error}</div>}
       {contactStatus === "succeeded" && (
         <div>
-          <table className="table table-dark">
+          <table className="table ">
             <thead>
               <tr>
                 <th>Id</th>
@@ -154,13 +154,11 @@ const ContactAd = () => {
                     </button>
                   </td>
                   <td>
-                    <span
-                      style={{
-                        color: contact.isAdminResponse ? "green" : "red",
-                      }}
-                    >
-                      ●
+                  <td>
+                    <span style={{ color: contact.isAdminResponse ? "green" : "red" }}>
+                      {contact.isAdminResponse ? "finished" : "not yet"}
                     </span>
+                  </td>
                   </td>
                   <td>{contact.responseDate}</td>
                   <td>
