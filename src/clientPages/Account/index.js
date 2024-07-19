@@ -265,7 +265,7 @@ const Account = () => {
                                     <div className={cx("comment-header")}><h2>Comments</h2></div>
                                     <div style={{ marginBottom: "30px" }}>
                                         {/* comment------------- */}
-                                        
+
                                         <div className={cx("comment-content")}>
                                             <div className={cx("comment-avatar-user")}>
                                                 <img alt="" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" />
@@ -344,7 +344,7 @@ const Account = () => {
                                                 <p>Reply</p>
                                             </div>
                                         </div>
-                                        
+
                                         {/* ------------------- */}
                                     </div>
                                     <div className={cx("comment-content-input")}>
