@@ -1,14 +1,15 @@
 import { PiUsers, PiSignOutLight } from "react-icons/pi";
 import {
-  IoHomeOutline,
-  IoChatboxOutline,
-  IoHelpOutline,
-  IoMenu,
-  IoCartOutline,
-  IoInformationCircleOutline,
+    IoHomeOutline,
+    IoChatboxOutline,
+    IoHelpOutline,
+    IoMenu,
+    IoCartOutline,
+    IoInformationCircleOutline,
 } from "react-icons/io5";
 import { IoIosSearch, IoMdTime } from "react-icons/io";
-import { FaRegEye, FaUserCircle, FaRegStar, FaRegUser, FaRegNewspaper } from "react-icons/fa";
+
+import { FaRegEye, FaUserCircle, FaRegStar, FaRegUser, FaRegNewspaper, FaPlus } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { GoFilter } from "react-icons/go";
@@ -19,44 +20,55 @@ import { TbMessage2Up } from "react-icons/tb";
 import { RiContactsBook3Line } from "react-icons/ri";
 import { DiHackernews } from "react-icons/di";
 
+
 const icons = {
 
-  PiUsers,
-  IoHomeOutline,
-  IoChatboxOutline,
-  IoHelpOutline,
-  PiSignOutLight,
-  IoMenu,
-  IoIosSearch,
-  FaRegEye,
-  IoCartOutline,
-  BsCurrencyDollar,
+    PiUsers,
+    IoHomeOutline,
+    IoChatboxOutline,
+    IoHelpOutline,
+    PiSignOutLight,
+    IoMenu,
+    IoIosSearch,
+    FaRegEye,
+    IoCartOutline,
+    BsCurrencyDollar,
 
-  // home
-  FaUserCircle,
-  GrPrevious,
-  GrNext,
+    // home
+    FaUserCircle,
+    GrPrevious,
+    GrNext,
 
-  //
-  GoFilter,
+    //
+    GoFilter,
 
-  //account
-  LuMapPin,
-  FiFlag,
-  IoMdTime,
+    //account
+    LuMapPin,
+    FiFlag,
+    IoMdTime,
+    FaRegStar ,
+    FaRegUser ,
+    MdOutlineChildCare,
+    MdAccessTime,
+    FaPlus ,
 
-  //aboutus
-  IoInformationCircleOutline,
+    // sdsdsad
 
-  //contact
-  RiContactsBook3Line,
-  //response message
-  TbMessage2Up,
+    FaRegStar, FaRegUser,
+    MdOutlineChildCare, MdAccessTime,
 
-  //news
-  FaRegNewspaper,
-  //news type
-  DiHackernews,
+    //aboutus
+    IoInformationCircleOutline,
+
+    //contact
+    RiContactsBook3Line,
+    //response message
+    TbMessage2Up,
+
+    //news
+    FaRegNewspaper,
+    //news type
+    DiHackernews,
 
 };
 
