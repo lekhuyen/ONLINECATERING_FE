@@ -116,8 +116,8 @@ const Home = () => {
                     </div>
                     <div className={cx("filter")}>
                         <button className={cx("btn-filter")}>
-                            <div><GoFilter /></div>
-                            <p>Fillter</p>
+                            <div className="icon"><GoFilter /></div>
+                            <span className="text">Filter</span>
                         </button>
                     </div>
                 </div>

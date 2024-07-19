@@ -381,14 +381,12 @@ const Account = () => {
                         <div className={cx("form")}>
                             <div className={cx("time")}>
                                 <div>
-                                    <p><MdAccessTime />
-                                        <span>Thoi gian den</span>
-                                    </p>
+                                    <p><MdAccessTime /><span>Thoi gian den</span></p>
                                 </div>
                                 <input type="date" />
                             </div>
                             <div className={cx("time")}>
-                                <p></p>
+                                <p><MdAccessTime /><span>Gio den</span></p>
                                 <input type="time" />
                             </div>
                         </div>
